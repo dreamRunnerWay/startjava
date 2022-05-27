@@ -10,8 +10,8 @@ public class IfElseStatementTheme {
             System.out.println("Доступ запрещен");
         }
 
-        boolean isUserGender = 1 == 0;
-        if(isUserGender) {
+        boolean isMaleGender = true;
+        if(isMaleGender) {
             System.out.println("Мужчина");
         } else {
             System.out.println("Женщина");
@@ -24,11 +24,11 @@ public class IfElseStatementTheme {
             System.out.println("Размер XL");
         }
 
-        char firstNameWord = "Bob".charAt(0);
-        if(firstNameWord == 'M') {
-            System.out.println("Первая буква имени:" + firstNameWord);
-        } else if(firstNameWord == 'I') {
-            System.out.println("Первая буква имени:" + firstNameWord);
+        char firstNameLetter = "Bob".charAt(0);
+        if(firstNameLetter == 'M') {
+            System.out.println("Первая буква имени:" + firstNameLetter);
+        } else if(firstNameLetter == 'I') {
+            System.out.println("Первая буква имени:" + firstNameLetter);
         } else {
             System.out.println("Нет совпадений первой буквы в имени");
         }
@@ -54,23 +54,20 @@ public class IfElseStatementTheme {
         System.out.println("\n3.Работа с числом");
         int digit = 3;
 
-        if(digit == 0) {
-            System.out.println("Число равно нулю");
-            System.exit(0);
-        } else {
+        if(digit != 0) {
             System.out.println("Число не равно нулю");
-        }
-
-        if(digit % 4 == 0) {
-            System.out.println("Число" + " " + digit + " " + "является чётным");
-        } else { 
-            System.out.println("Число" + " " + digit + " " + "является нечётным");
-        }
-
-        if(digit > 0) {
-            System.out.println("Число" + " " + digit + " " + "является положительным");
+            if(digit % 2 == 0) {
+                System.out.println("Число" + " " + digit + " " + "является чётным");
+            } else {
+                System.out.println("Нечетное");
+            }
+            if(digit > 0) {
+                System.out.println("Число" + " " + digit + " " + "является положительным");
+            } else {
+                System.out.println("Отрицательное");
+            }
         } else {
-            System.out.println("Число" + " " + digit + " " + "является отрицательным");
+            System.out.println("Число является 0");
         }
 
         //Поиск одинаковых цифр в числах
@@ -78,27 +75,27 @@ public class IfElseStatementTheme {
         int num1 = 456;
         int num2 = 159;
 
-        int dischargingHundreds = num1 / 100;
-        int dischargingTens = num1 / 10 % 10;
-        int dischargingUnits = num1 % 10;
-        int dischargingHundreds2 = num2 / 100;
-        int dischargingTens2 = num2 / 10 % 10;
-        int dischargingUnits2 = num2 % 10;
+        int hundredNum = num1 / 100;
+        int tensNum = num1 / 10 % 10;
+        int oneNum = num1 % 10;
+        int hundredNum2 = num2 / 100;
+        int tensNum2 = num2 / 10 % 10;
+        int oneNum2 = num2 % 10;
 
-        if(dischargingHundreds == dischargingHundreds2) {
-            System.out.println("В разряде сотен есть одинаковые цифры:" + " " + dischargingHundreds);
+        if(hundredNum == hundredNum2) {
+            System.out.println("В разряде сотен есть одинаковые цифры:" + " " + hundredNum);
         } else {
             System.out.println("В разряде сотен одинаковых цифр нет");
         }
 
-        if(dischargingTens == dischargingTens2) {
-            System.out.println("В разряде десятков есть одинаковые цифры:" + " " + dischargingTens);
+        if(tensNum == tensNum2) {
+            System.out.println("В разряде десятков есть одинаковые цифры:" + " " + tensNum);
         } else {
             System.out.println("В разряде десятков одинаковых чисел нет");
         }
 
-        if(dischargingUnits == dischargingUnits2) {
-            System.out.println("В разряде единиц есть одинаковые цифры:" + " " + dischargingUnits);
+        if(oneNum == oneNum2) {
+            System.out.println("В разряде единиц есть одинаковые цифры:" + " " + oneNum);
         } else {
             System.out.println("В разряде единиц одинаковых чисел нет");
         }
@@ -120,23 +117,17 @@ public class IfElseStatementTheme {
         //Определение суммы вклада и начисленных банком %
         System.out.println("\n6.Определение суммы вклада и начисленных банком %");
         int deposit = 300000;
-        int depositMin = 100000;
-        int depositMax = 300000;
+        int profit;
 
-        int profitMin = deposit * 5 / 100;
-        int profitMid = deposit * 7 / 100;
-        int profitMax = deposit * 10 / 100;
-
-        if(deposit < depositMin) {
-            System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 
-                    5 + " " + "итоговая сумма" + " " + (deposit + profitMin));
-        } else if (deposit >= depositMin && deposit <= depositMax) {
-            System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 
-                    7 + " " + "итоговая сумма" + " " + (deposit + profitMid));
+        if(deposit < 100000) {
+            profit = deposit * 5 / 100;
+        } else if (deposit >= 100000 && deposit <= 300000) {
+            profit = deposit * 7 / 100;
         } else {
-            System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 
-                    10 + " " + "итоговая сумма" + " " + (deposit + profitMax));
+            profit = deposit * 10 / 100;
         }
+
+        System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 10 + " " + "итоговая сумма" + " " + (deposit + profit));
 
         //Определение оценки по предметам
         System.out.println("\n7.Определение оценки по предметам");
@@ -171,7 +162,7 @@ public class IfElseStatementTheme {
             System.out.println("Вводимое значение должно быть от 0 до 100");
         }
 
-        float avarageScore = ((float)scoreA + (float)scoreD) / 2;
+        float avarageScore = ((float) scoreA + (float) scoreD) / 2;
         int avaragePercent = (hystoryPercent + programmingPercent) / 2;
         System.out.println("Средняя оценка:" + " " + avarageScore);
         System.out.println("Средний процент:" + " " + avaragePercent + "% оценок по предметам");
@@ -185,7 +176,11 @@ public class IfElseStatementTheme {
 
         int yearAverage = (monthCoastProduct + monthRentSum - monthProfit) * monthSum;
 
-        System.out.println("Прибыль за год:" + "+" + yearAverage + " " + "руб.");
+        if(yearAverage >= 0) {
+            System.out.println("Прибыль за год:" + "+" + yearAverage + " " + "руб.");
+        } else {
+            System.out.println("Прибыль за год:" + "-" + yearAverage + " " + "руб.");
+        }
 
         //Определение существования треугольника
         System.out.println("\n9.Определение существования треугольника");
@@ -195,32 +190,27 @@ public class IfElseStatementTheme {
 
         if(a + b > c && a + c > b && b + c > a) {
             System.out.println("Треугольник существует");
+            if(a > b && a > c) {
+                System.out.println("Гипотенуза:" + "a");
+            }
+            if(b > a && b > c) {
+                System.out.println("Гипотенуза:" + "b");
+            }
+            if(c > a && c > b) {
+                System.out.println("Гипотенуза:" + "c");
+            }
+            if(a < c && b < c) {
+                System.out.println("Катет:" + "a,b");
+            }
+            int triangleArea = a * b / 2;
+            System.out.println("Площадь треугольника:" + triangleArea);
+            System.out.println("|\\");
+            System.out.println("| \\");
+            System.out.println("|  \\");
+            System.out.println("|___\\");
         } else {
             System.out.println("Треугольник не существует");
-            System.exit(0);
         }
-
-        if(a > b && a > c) {
-            System.out.println("Гипотенуза:" + "a");
-        } else if(b > a && b > c) {
-            System.out.println("Гипотенуза:" + "b");
-        } else if(c > a && c > b) {
-            System.out.println("Гипотенуза:" + "c");
-        }
-
-        if(a < c && b < c) {
-            System.out.println("Катет:" + "a,b");
-        } else {
-            System.out.println("Не катеты");
-        }
-
-        int triangleArea = a * b / 2;
-
-        System.out.println("Площадь треугольника:" + triangleArea);
-        System.out.println("|\\");
-        System.out.println("| \\");
-        System.out.println("|  \\");
-        System.out.println("|___\\");
 
         //Подсчет количества банкнот
         System.out.println("\n10.Подсчет количества банкнот");
