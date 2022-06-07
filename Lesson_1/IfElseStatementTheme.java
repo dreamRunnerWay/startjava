@@ -55,7 +55,6 @@ public class IfElseStatementTheme {
         int digit = 3;
 
         if(digit != 0) {
-            System.out.println("Число не равно нулю");
             if(digit % 2 == 0) {
                 System.out.println("Число" + " " + digit + " " + "является чётным");
             } else {
@@ -127,7 +126,8 @@ public class IfElseStatementTheme {
             profit = deposit * 10 / 100;
         }
 
-        System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 10 + " " + "итоговая сумма" + " " + (deposit + profit));
+        System.out.println("Сумма вклада" + " " + deposit + " " + "начисленный %" + " " + 
+                10 + " " + "итоговая сумма" + " " + (deposit + profit));
 
         //Определение оценки по предметам
         System.out.println("\n7.Определение оценки по предметам");
@@ -174,42 +174,12 @@ public class IfElseStatementTheme {
         int monthProfit = 13000;
         int monthCoastProduct = 9000;
 
-        int yearAverage = (monthCoastProduct + monthRentSum - monthProfit) * monthSum;
+        int yearAverage = (monthProfit - monthRentSum - monthCoastProduct) * monthSum;
 
-        if(yearAverage >= 0) {
+        if(yearAverage <= 0) {
+            System.out.println("Прибыль за год:" + yearAverage + " " + "руб.");
+        } else {
             System.out.println("Прибыль за год:" + "+" + yearAverage + " " + "руб.");
-        } else {
-            System.out.println("Прибыль за год:" + "-" + yearAverage + " " + "руб.");
-        }
-
-        //Определение существования треугольника
-        System.out.println("\n9.Определение существования треугольника");
-        int a = 3;
-        int b = 4;
-        int c = 5;
-
-        if(a + b > c && a + c > b && b + c > a) {
-            System.out.println("Треугольник существует");
-            if(a > b && a > c) {
-                System.out.println("Гипотенуза:" + "a");
-            }
-            if(b > a && b > c) {
-                System.out.println("Гипотенуза:" + "b");
-            }
-            if(c > a && c > b) {
-                System.out.println("Гипотенуза:" + "c");
-            }
-            if(a < c && b < c) {
-                System.out.println("Катет:" + "a,b");
-            }
-            int triangleArea = a * b / 2;
-            System.out.println("Площадь треугольника:" + triangleArea);
-            System.out.println("|\\");
-            System.out.println("| \\");
-            System.out.println("|  \\");
-            System.out.println("|___\\");
-        } else {
-            System.out.println("Треугольник не существует");
         }
 
         //Подсчет количества банкнот
